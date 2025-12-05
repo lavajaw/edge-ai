@@ -24,6 +24,10 @@ import edgeai.composeapp.generated.resources.compose_multiplatform
 fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
+        var image by remember { mutableStateOf<SharedImage?>(null) }
+        val cameraManager = rememberCameraManager { newImage ->
+            image = newImage
+        }
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
@@ -34,6 +38,19 @@ fun App() {
             Button(onClick = { showContent = !showContent }) {
                 Text("Click me!")
             }
+            Button(onClick = { cameraManager.launch() }) {
+                Text("Open camera")
+            }
+
+            val painter = rememberSharedImage(image)
+            if (painter != null) {
+                Image(
+                    painter = painter,
+                    contentDescription = "Captured image",
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+
             AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
                 Column(
