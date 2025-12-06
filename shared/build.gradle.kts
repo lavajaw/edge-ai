@@ -8,7 +8,7 @@ plugins {
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+            jvmTarget.set(JvmTarget.JVM_21)
         }
     }
     
@@ -19,6 +19,10 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.litert)
+            implementation(libs.litert.gpu)
+            implementation(libs.litert.metadata)
+            implementation(libs.litert.support)
             // put your Multiplatform dependencies here
         }
     }
@@ -28,8 +32,8 @@ android {
     namespace = "com.lavajaw.edge_ai.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
