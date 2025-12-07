@@ -29,8 +29,6 @@ litert = { module = "com.google.ai.edge.litert:litert", version.ref = "litert_v2
 litert-gpu = { module = "com.google.ai.edge.litert:litert-gpu", version.ref = "litert_v1" }
 litert-metadata = { module = "com.google.ai.edge.litert:litert-metadata", version.ref = "litert_v1" }
 litert-support = { module = "com.google.ai.edge.litert:litert-support", version.ref = "litert_v1" }
-tensorflow-lite-support = { group = "org.tensorflow", name = "tensorflow-lite-support" }
-tensorflow-lite-metadata = { group = "org.tensorflow", name = "tensorflow-lite-metadata" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

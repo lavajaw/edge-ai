@@ -78,7 +78,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.tensorflow.lite.support)
-    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.litert.support)
+    implementation(libs.litert.metadata)
     debugImplementation(compose.uiTooling)
 }

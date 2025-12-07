@@ -18,7 +18,7 @@ kotlin {
     jvm()
     
     sourceSets {
-        commonMain.dependencies {
+        androidMain.dependencies {
             implementation(libs.litert)
             implementation(libs.litert.gpu)
             implementation(libs.litert.metadata)
